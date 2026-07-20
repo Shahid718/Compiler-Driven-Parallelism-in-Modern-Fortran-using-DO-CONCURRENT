@@ -1,0 +1,65 @@
+#-------------------------------------------------------------------------------
+# GitHub Actions CI workflow
+# Builds the Compiler-Driven-Parallelism-Fortran (Cahn-Hilliard) project
+# with both supported compilers: Intel oneAPI ifx and NVIDIA HPC SDK (nvfortran)
+#
+# File: .github/workflows/cmake-build.yml
+#-------------------------------------------------------------------------------
+name: CMake Build (Intel ifx / NVIDIA nvfortran)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build (${{ matrix.compiler }}, ${{ matrix.build_type }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler: [intel, nvidia-hpc]
+        build_type: [Release, Debug]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # fortran-lang/setup-fortran installs and configures the requested
+      # Fortran toolchain (Intel oneAPI ifx or NVIDIA HPC SDK nvfortran)
+      # and exports CC/FC accordingly.
+      - name: Set up Fortran compiler
+        id: setup-fortran
+        uses: fortran-lang/setup-fortran@v1
+        with:
+          compiler: ${{ matrix.compiler }}
+
+      - name: Show compiler versions
+        run: |
+          echo "FC=$FC"
+          $FC --version
+
+      - name: Configure CMake
+        env:
+          FC: ${{ steps.setup-fortran.outputs.fc }}
+        run: |
+          cmake -S . -B build \
+            -DCMAKE_Fortran_COMPILER="$FC" \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+
+      - name: Build
+        run: |
+          cmake --build build --parallel
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cahn_hilliard_driver-${{ matrix.compiler }}-${{ matrix.build_type }}
+          path: |
+            build/bin/
+            build/**/*.lst
+          if-no-files-found: warn
