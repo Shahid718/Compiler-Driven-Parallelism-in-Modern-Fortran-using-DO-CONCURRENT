@@ -1,0 +1,5 @@
+SET OMP_NUM_THREADS=1
+rmdir /s /q build && mkdir build && cd build && cmake .. -G "NMake Makefiles" -DCMAKE_Fortran_COMPILER=ifx -DCMAKE_BUILD_TYPE=Release -DUSE_DOUBLE_PRECISION=ON && cmake --build . && bin\cahn_hilliard_driver.exe
+
+SET OMP_NUM_THREADS=1
+rmdir /s /q build && mkdir build && cd build && cmake .. -G "NMake Makefiles" -DCMAKE_Fortran_COMPILER=ifx -DCMAKE_BUILD_TYPE=Release && cmake --build . && bin\cahn_hilliard_driver.exe

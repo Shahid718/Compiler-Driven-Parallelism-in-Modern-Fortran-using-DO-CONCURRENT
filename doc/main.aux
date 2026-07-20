@@ -1,0 +1,54 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Objectives}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Motivation}{1}{subsection.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Contributions}{1}{subsection.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Report Structure}{2}{subsection.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Mathematical Model}{2}{section.2}\protected@file@percent }
+\newlabel{sec:math}{{2}{2}{Mathematical Model}{section.2}{}}
+\newlabel{eq:ch}{{1}{2}{Mathematical Model}{equation.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Numerical Implementation}{2}{section.3}\protected@file@percent }
+\newlabel{eq:laplacian}{{2}{2}{Numerical Implementation}{equation.2}{}}
+\newlabel{eq:nabla4}{{3}{2}{Numerical Implementation}{equation.3}{}}
+\newlabel{eq:euler}{{4}{2}{Numerical Implementation}{equation.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Numerical implementation flowchart for the Cahn-Hilliard solver.}}{3}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:flowchart}{{1}{3}{Numerical implementation flowchart for the Cahn-Hilliard solver}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Software Architecture}{3}{section.4}\protected@file@percent }
+\newlabel{sec:architecture}{{4}{3}{Software Architecture}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Compiler Configurations}{3}{section.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Release compiler configurations used for benchmarking.}}{3}{table.caption.3}\protected@file@percent }
+\newlabel{tab:compiler_config}{{1}{3}{Release compiler configurations used for benchmarking}{table.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Software architecture of the phase-field solver. The computational kernels contain the \texttt  {DO CONCURRENT} parallel regions, while the infrastructure modules provide precision control, grid management, timing, input/output, error handling, and performance reporting etc.}}{4}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:software_architecture}{{2}{4}{Software architecture of the phase-field solver. The computational kernels contain the \texttt {DO CONCURRENT} parallel regions, while the infrastructure modules provide precision control, grid management, timing, input/output, error handling, and performance reporting etc}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Parallel Programming Strategy}{4}{section.6}\protected@file@percent }
+\newlabel{sec:parallel}{{6}{4}{Parallel Programming Strategy}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Traditional Approach: OpenMP Directives}{4}{subsection.6.1}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {1}{\ignorespaces Traditional OpenMP parallel loop in Fortran.}}{4}{lstlisting.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Modern Approach: DO CONCURRENT}{4}{subsection.6.2}\protected@file@percent }
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {2}{\ignorespaces Modern Fortran DO CONCURRENT loop.}}{5}{lstlisting.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Parallelization Flow}{5}{subsection.6.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Parallelization flow with DO CONCURRENT.}}{5}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:parallel_flow}{{3}{5}{Parallelization flow with DO CONCURRENT}{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}CMake Build System}{5}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Benchmarking Methodology}{5}{section.8}\protected@file@percent }
+\newlabel{sec:methodology}{{8}{5}{Benchmarking Methodology}{section.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Benchmark platforms used for performance evaluation.}}{6}{table.caption.5}\protected@file@percent }
+\newlabel{tab:benchmark_platform}{{2}{6}{Benchmark platforms used for performance evaluation}{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Strong scaling analysis of the compiler-driven DO CONCURRENT implementation using the NVIDIA HPC SDK (nvfortran) on an AMD Ryzen 9 3900XT processor. The figure compares performance across 1, 12, and 24 threads, highlighting the influence of SMT and memory-bandwidth limitations for a fixed workload of 2000 time steps.}}{6}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:scaling}{{4}{6}{Strong scaling analysis of the compiler-driven DO CONCURRENT implementation using the NVIDIA HPC SDK (nvfortran) on an AMD Ryzen 9 3900XT processor. The figure compares performance across 1, 12, and 24 threads, highlighting the influence of SMT and memory-bandwidth limitations for a fixed workload of 2000 time steps}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Performance Results}{6}{section.9}\protected@file@percent }
+\newlabel{sec:results}{{9}{6}{Performance Results}{section.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Execution time and computational performance comparison between Intel ifx and NVIDIA nvfortran for single- and double-precision implementations.}}{7}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:performance_comparison}{{5}{7}{Execution time and computational performance comparison between Intel ifx and NVIDIA nvfortran for single- and double-precision implementations}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces SMT scalability analysis showing the impact of memory-bandwidth limitations on the compiler-driven \texttt  {DO CONCURRENT} implementation using NVIDIA nvfortran on an AMD Ryzen 9 3900XT platform.}}{7}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:smt}{{6}{7}{SMT scalability analysis showing the impact of memory-bandwidth limitations on the compiler-driven \texttt {DO CONCURRENT} implementation using NVIDIA nvfortran on an AMD Ryzen 9 3900XT platform}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Discussion}{8}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{8}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{11}{8}{Conclusion}{section.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Future work}{9}{subsection.11.1}\protected@file@percent }
+\gdef \@abspage@last{10}

@@ -1,0 +1,142 @@
+rmdir /s /q build && mkdir build && cd build && cmake .. -G "NMake Makefiles" -DCMAKE_Fortran_COMPILER=ifx -DCMAKE_BUILD_TYPE=Release -DUSE_DOUBLE_PRECISION=ON && cmake --build . && bin\cahn_hilliard_driver.exe
+-- The Fortran compiler identification is IntelLLVM 2026.0.0 with MSVC-like command-line
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Check for working Fortran compiler: C:/Program Files (x86)/Intel/oneAPI/compiler/latest/bin/ifx.exe - skipped
+-- Compiler : IntelLLVM
+-- Using Intel oneAPI ifx
+-- DO CONCURRENT enabled using Intel ifx.
+--
+-- ====================================================
+--  Project        : Compiler-driven-Parallelism-Fortran-DO-CONCURRENT
+--  Version        : 1.0.0
+--  Compiler       : Intel oneAPI ifx
+--  Build Type     : Release
+--  System         : Windows
+--
+--  Parallel Programming Model
+--    Standard Fortran (DO CONCURRENT)
+--
+--  Output
+--    Executable   : D:/github/dc/new/build/bin
+--    Modules      : D:/github/dc/new/build/modules
+-- ====================================================
+--
+-- Configuring done (4.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: D:/github/dc/new/build
+[  5%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/precisions_control.f90.obj
+[ 11%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/core_utilities.f90.obj
+[ 17%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/error_handler.f90.obj
+[ 23%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/phase_field_core.f90.obj
+[ 29%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/free_energy_kernel.f90.obj
+[ 35%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/grid_generator.f90.obj
+[ 41%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/grid_setup.f90.obj
+[ 47%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/io_handlers.f90.obj
+[ 52%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/laplacian_kernel.f90.obj
+[ 58%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/microstructure_initializer.f90.obj
+[ 64%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/performance_analyzer.f90.obj
+[ 70%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/performance_timer.f90.obj
+[ 76%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/performance_evaluation.f90.obj
+[ 82%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/simulation_config.f90.obj
+[ 88%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/src/time_kernel.f90.obj
+[ 94%] Building Fortran object CMakeFiles/cahn_hilliard_driver.dir/app/main_driver.f90.obj
+[100%] Linking Fortran executable bin\cahn_hilliard_driver.exe
+[100%] Built target cahn_hilliard_driver
+
+   Cahn-Hilliard Phase-Field Solver
+   Version 1.0.0  |  Author: Shahid Maqbool  |  License: MIT
+
+   +----------------------------------------------------------------------+
+   |                  RUNTIME CONFIGURATION                               |
+   +----------------------------------------------------------------------+
+
+   Compiler       : Intel(R) Fortran Compiler for applications running on Intel(R) 64, Version 2026.0.0 Build 20260331
+   Compiler flags : /nologo /fpp /DUSE_DOUBLE_PRECISION /nologo /fpp /O2 /DNDEBUG /threads /libs:dll /module:modules /O2 /QxHost /Qopt-report:3 /Qopt-report-phase:openmp,vec,loop /Qopenmp /FoCMakeFiles\cahn_hilliard_driver.dir\src\core_utilities.f90.obj /FdCMakeFiles\cahn_hilliard_driver.dir\ /c
+  ========================================================================
+   Threads        : 1
+   Precision      : Double precision (64-bit)
+   Memory model   : dynamic allocation
+   Output unit    : 6
+   +----------------------------------------------------------------------+
+   |                  GRID SETUP                                          |
+   +----------------------------------------------------------------------+
+
+   +----------------------------------------------------------------------+
+   | Enter grid dimensions                                                |
+   | Press Enter to use default values                                    |
+   +----------------------------------------------------------------------+
+ Enter Nx (positive integer, default 500):
+
+ Using default Nx =          500
+ Enter Ny (positive integer, default 500):
+
+ Using default Ny =          500
+   Grid size      : 500 x 500
+   Grid spacing   : dx = 1.0000, dy = 1.0000
+   Initial state  : c0 = .4000, noise = .0200
+   Free energy A  : 1.0000
+   Integration    : dt = .01000, mobility = 1.0000, grad_coef = .5000
+   Time steps     : 2000
+   RNG seed       : non-deterministic
+   Output file    : ch.dat
+   +----------------------------------------------------------------------+
+   |                  MICROSTRUCTURE INITIALIZATION                       |
+   +----------------------------------------------------------------------+
+
+      c0     :   0.4000
+      noise  :   0.0200
+    Initial microstructure generated
+   -----------------------------------------------------------------------
+
+   +----------------------------------------------------------------------+
+   |   Starting Cahn-Hilliard Microstructure Evolution                    |
+   +----------------------------------------------------------------------+
+
+
+  Progress:
+
+  Timer started...
+  Progress ||||||||||||||||||||||   5%   Progress ||||||||||||||||||||||  10%   Progress ||||||||||||||||||||||  15%   Progress ||||||||||||||||||||||  20%   Progress ||||||||||||||||||||||  25%   Progress ||||||||||||||||||||||  30%   Progress ||||||||||||||||||||||  35%   Progress ||||||||||||||||||||||  40%   Progress ||||||||||||||||||||||  45%   Progress ||||||||||||||||||||||  50%   Progress ||||||||||||||||||||||  55%   Progress ||||||||||||||||||||||  60%   Progress ||||||||||||||||||||||  65%   Progress ||||||||||||||||||||||  70%   Progress ||||||||||||||||||||||  75%   Progress ||||||||||||||||||||||  80%   Progress ||||||||||||||||||||||  85%   Progress ||||||||||||||||||||||  90%   Progress ||||||||||||||||||||||  95%   Progress |||||||||||||||||||||| 100%
+
+   +----------------------------------------------------------------------+
+   |                         OUTPUT RESULTS                               |
+   +----------------------------------------------------------------------+
+   |                                                                      |
+   |    Grid size      : 500 x 500                                        |
+   |    Total points   : 250000                                           |
+   |    Statistics     : min =   0.0115, mean =   0.3994, max =   0.9984  |
+   |                                                                      |
+   |    Concentration Sample (first 5 x 5):                               |
+   |                                                                      |
+   |        0.378339  0.153562  0.123856  0.245932  0.594655              |
+   |        0.196417  0.114353  0.133381  0.314427  0.737699              |
+   |        0.145032  0.118196  0.129911  0.258187  0.594681              |
+   |        0.319729  0.245350  0.155767  0.158213  0.250387              |
+   |        0.787906  0.615729  0.265858  0.130066  0.113175              |
+   |                                                                      |
+   |    Format         : BINARY (64-bit floats)                           |
+   +----------------------------------------------------------------------+
+
+   +----------------------------------------------------------------------+
+   |                    BINARY OUTPUT SUCCESSFUL
+   +----------------------------------------------------------------------+
+   |    File           : ch.dat                                           |
+   |    Points written : 250000                                           |
+   |    File size      : 1953.16 KB                                        |
+   |    Format         : BINARY (stream access)                           |
+   +----------------------------------------------------------------------+
+
+   +----------------------------------------------------------------------+
+   |                     PERFORMANCE REPORT                               |
+   +----------------------------------------------------------------------+
+    Grid size           : 500 x 500
+    Time steps          : 2000
+    Total updates       : 500000000
+    Computed Time       : 3.653
+    MLUPS               : 136.874
+    -----------------------------------------------------------------------
+
+   +----------------------------------------------------------------------+
+   |   Simulation completed successfully.                                 |
+   +----------------------------------------------------------------------+
