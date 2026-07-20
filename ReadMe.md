@@ -90,6 +90,7 @@ src/
     performance_timer.f90
     performance_analyzer.f90
     performance_evaluation.f90
+    simulation_config.f90
     error_handler.f90
 ```
 
