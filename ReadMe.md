@@ -10,6 +10,7 @@
 ![Precision](https://img.shields.io/badge/precision-Single%20%7C%20Double-orange)
 ![Supported Compilers](https://img.shields.io/badge/Supported_Compilers-ifx%20%7C%20NVHPC-blueviolet)
 ![Parallel Model](https://img.shields.io/badge/Parallel_Model-DO%20CONCURRENT-success)
+[![CMake Build (Intel ifx / NVIDIA nvfortran)](https://github.com/Shahid718/Compiler-Driven-Parallelism-in-Modern-Fortran-using-DO-CONCURRENT/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/Shahid718/Compiler-Driven-Parallelism-in-Modern-Fortran-using-DO-CONCURRENT/actions/workflows/cmake-build.yml)
 ---
 
 ![Speedup](benchmark/figure2_speedup_efficiency.png)
