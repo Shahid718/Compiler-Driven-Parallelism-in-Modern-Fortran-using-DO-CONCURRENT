@@ -266,6 +266,5 @@ Research interests include
 * Scientific Computing
 * Computational Materials Science
 * Modern Fortran
-* Compiler Technology
 * Parallel Programming
 * Machine Learning
